@@ -18,7 +18,7 @@ const mealCard: SxProps<Theme> = {
   justifyContent: 'space-between',
   alignItems: 'center',
   gap: '15px',
-  borderRadius: '2.5%',
+  borderRadius: '3%',
   margin: '0 15px 0 15px',
   textAlign: 'center',
   boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px',
@@ -60,7 +60,7 @@ const mealCardLink: object = {
 const image: object = {
   width: '300px',
   height: '300px',
-  borderRadius: '2%'
+  borderRadius: '2% 2% 0 0'
 }
 
 export { pageWrapper, mealCard, mealCardText, mealCardBlock, mealCardLink, image };

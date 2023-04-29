@@ -19,7 +19,7 @@ const header: SxProps<Theme> = {
   fontFamily: 'Calibri',
   fontWeight: 600,
   textAlign: "center",
-  lineHeight: '100px',
+  lineHeight: '120px',
   cursor: 'default'
 }
 
