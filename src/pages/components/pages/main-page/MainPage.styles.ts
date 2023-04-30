@@ -8,19 +8,5 @@ const pageWrapper: SxProps<Theme> = {
   flexDirection: 'column',
 }
 
-const icon: SxProps<Theme> = {
-  color: 'black',
-  width: '45px',
-  height: '45px',
-  marginRight: '10px'
-}
 
-const header: SxProps<Theme> = {
-  fontFamily: 'Calibri',
-  fontWeight: 600,
-  textAlign: "center",
-  lineHeight: '120px',
-  cursor: 'default'
-}
-
-export { pageWrapper, icon, header };
+export { pageWrapper };

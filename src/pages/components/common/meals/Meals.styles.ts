@@ -63,4 +63,8 @@ const image: object = {
   borderRadius: '2% 2% 0 0'
 }
 
-export { pageWrapper, mealCard, mealCardText, mealCardBlock, mealCardLink, image };
+const pagination = {
+  marginTop: '20px'
+}
+
+export { pageWrapper, mealCard, mealCardText, mealCardBlock, mealCardLink, image, pagination };

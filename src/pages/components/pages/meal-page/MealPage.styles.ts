@@ -4,7 +4,9 @@ import {Theme} from "@mui/material";
 
 const pageWrapper: SxProps<Theme> = {
   display: 'flex',
-  justifyContent: 'center'
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center'
 }
 
 export {pageWrapper}

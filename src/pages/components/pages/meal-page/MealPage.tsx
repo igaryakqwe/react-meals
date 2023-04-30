@@ -5,6 +5,7 @@ import MealsService from "@/services/meals.service";
 import {Box, CircularProgress, Typography} from "@mui/material";
 import MealCard from "@/pages/components/common/meal-card";
 import * as styles from './MealPage.styles'
+import Video from "@/pages/components/common/video";
 
 const MealPage = () => {
   const router = useRouter();
@@ -18,12 +19,23 @@ const MealPage = () => {
 
   const meal = data?.meals[0] as object;
 
-  if (isLoading) return <CircularProgress />
-  if (isError) return <Typography>ERROR</Typography>
+
+  if (isLoading) return (
+    <Box sx={styles.pageWrapper}>
+      <CircularProgress />
+    </Box>
+  );
+
+  if (isError) return (
+    <Box sx={styles.pageWrapper}>
+      <Typography variant="h4">ERROR</Typography>
+    </Box>
+  );
 
   return (
     <Box sx={styles.pageWrapper}>
       <MealCard meal={meal}/>
+      <Video source={meal.strYoutube}/>
     </Box>
   );
 };

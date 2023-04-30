@@ -7,13 +7,10 @@ import {
 } from "@mui/material";
 import React, {useState} from "react";
 import * as styles from './Meals.styles';
-import mealId from "@/pages/[mealId]";
+import usePagination from "@/hooks/usePagination";
 
 
 const Meals = () => {
-
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 9;
 
   const { data, isLoading, isError } = useQuery(
     "meals",
@@ -23,22 +20,29 @@ const Meals = () => {
     }
   );
 
-  const handlePageChange = (event, value) => {
-    setCurrentPage(value);
-  };
+  const itemsPerPage = 9;
 
-  if (isLoading) return <CircularProgress />;
+  const { paginatedData, jumpToPage, currentPage, totalPages } =
+    usePagination(data?.meals, itemsPerPage);
 
-  if (isError) return <Typography sx={styles.mealCardText} variant="h5">ERROR</Typography>;
+  const handlePageChange = (event, page) => jumpToPage(page)
 
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  const currentItems = data?.meals.slice(startIndex, endIndex);
+  if (isLoading) return (
+    <Box sx={styles.pageWrapper}>
+      <CircularProgress />
+    </Box>
+  );
+
+  if (isError) return (
+    <Box sx={styles.pageWrapper}>
+      <Typography sx={styles.mealCardText?.header} variant="h4">ERROR</Typography>
+    </Box>
+  );
 
   return (
     <>
       <Box sx={styles.pageWrapper}>
-        {currentItems?.map((meal) => (
+        {paginatedData?.map((meal) => (
           <Box sx={styles.mealCard} key={meal.idMeal}>
             <a href={`/${meal.idMeal}`} style={styles.mealCardLink}>
               <img src={meal.strMealThumb} alt={meal.strMeal} style={styles.image} />
@@ -50,8 +54,11 @@ const Meals = () => {
             </a>
           </Box>
         ))}
+      </Box>
+      <Box>
         <Pagination
-          count={Math.ceil((data?.meals.length || 0) / itemsPerPage)}
+          sx={styles.pagination}
+          count={totalPages}
           page={currentPage}
           onChange={handlePageChange}
           size="large"
@@ -59,6 +66,6 @@ const Meals = () => {
       </Box>
     </>
   );
-};
+}
 
 export default Meals;
