@@ -6,6 +6,7 @@ import MealsService from "@/services/meals.service";
 import usePagination from "@/hooks/usePagination";
 import Loader from "@/components/common/loader/Loader";
 import Error from "@/components/common/error";
+import Link from "next/link";
 
 const MainPage = () => {
 
@@ -22,7 +23,7 @@ const MainPage = () => {
   const { paginatedData, jumpToPage, currentPage, totalPages } =
     usePagination(data?.meals, itemsPerPage);
 
-  const handlePageChange = (event, page) => jumpToPage(page)
+  const handlePageChange = (event: any, page: number) => jumpToPage(page)
 
   if (isLoading) return (
     <Loader />
@@ -36,15 +37,15 @@ const MainPage = () => {
     <Box sx={styles.pageWrapper}>
       <Box sx={styles.cardWrapper}>
         {paginatedData?.map((meal) => (
-          <Box sx={styles.mealCard} key={meal.idMeal}>
-            <a href={`/${meal.idMeal}`} style={styles.mealCardLink}>
+          <Box sx={styles.mealCard} key={meal.strMeal}>
+            <Link href={`/${meal.idMeal}`} style={styles.mealCardLink}>
               <img src={meal.strMealThumb} alt={meal.strMeal} style={styles.image} />
               <Box sx={styles.mealCardBlock}>
-                <Typography sx={styles.mealCardText?.header} variant="h5">{meal.strMeal}</Typography>
+                <Typography sx={styles.mealCardText?.h5} variant="h5">{meal.strMeal}</Typography>
                 <Typography sx={styles.mealCardText} variant="h6">{meal.strCategory}</Typography>
                 <Typography sx={styles.mealCardText} variant="h6">{meal?.strTags}</Typography>
               </Box>
-            </a>
+            </Link>
           </Box>
         ))}
       </Box>

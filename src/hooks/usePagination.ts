@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
+import { GetPaginatedMealsDTO } from "@/types/service";
 
-const usePagination = (data:[], itemsPerPage: number) => {
+const usePagination = (data: GetPaginatedMealsDTO, itemsPerPage: number) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
 

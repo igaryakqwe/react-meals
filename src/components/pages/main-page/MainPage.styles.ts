@@ -49,7 +49,7 @@ const mealCardBlock: SxProps<Theme> = {
 }
 
 const mealCardText: SxProps<Theme> = {
-  header: {
+  'h5': {
     fontWeight: 600,
   },
   wordBreak: 'break-all',

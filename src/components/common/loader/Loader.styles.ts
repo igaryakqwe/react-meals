@@ -5,7 +5,8 @@ export const wrapper: SxProps<Theme> = {
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
-  alignItems: 'center'
+  alignItems: 'center',
+  margin: '20px'
 }
 
 export const loader: SxProps<Theme> = {

@@ -8,6 +8,15 @@ export interface GetAllMealsDTO {
   }[]
 }
 
+export type GetPaginatedMealsDTO = {
+  idMeal: string;
+  strMeal: string;
+  strCategory: string;
+  strMealThumb: string;
+  strTags: string;
+}[] | undefined
+
+
 export interface GetMealDTO {
   meals: {
     idMeal: string,
