@@ -1,14 +1,11 @@
 import { useQuery } from "react-query";
 import MealsService from "@/services/meals.service";
-import {
-  Box,
-  CircularProgress,
-  Pagination,
-  Typography
-} from "@mui/material";
+import { Box, Pagination, Typography } from "@mui/material";
 import React from "react";
 import * as styles from './Meals.styles';
 import usePagination from "@/hooks/usePagination";
+import Loader from "@/components/common/loader";
+import Error from "@/components/common/error";
 
 
 const Meals = () => {
@@ -29,15 +26,11 @@ const Meals = () => {
   const handlePageChange = (event, page) => jumpToPage(page)
 
   if (isLoading) return (
-    <Box sx={styles.pageWrapper}>
-      <CircularProgress />
-    </Box>
+    <Loader />
   );
 
-  if (isError) return (
-    <Box sx={styles.pageWrapper}>
-      <Typography sx={styles.mealCardText?.header} variant="h4">ERROR</Typography>
-    </Box>
+  if (!isError) return (
+    <Error />
   );
 
   return (

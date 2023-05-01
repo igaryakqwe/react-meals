@@ -25,14 +25,14 @@ const mealCardMain: SxProps<Theme> = {
   alignItems: "center",
   gap: '40px',
   margin: '0 80px 0 80px',
-  padding: '80px 0 80px 0',
+  padding: '80px 0 60px 0',
 }
 
 const mealCardList: SxProps<Theme> = {
   display: 'grid',
   gridTemplateColumns: 'repeat(3, 1fr)',
   gridGap: '20px',
-  margin: '0 40px 0 40px',
+  margin: '0 40px 60px 40px',
   '@media(max-width: 670px)': {
     gridTemplateColumns: 'repeat(2, 1fr)',
   },

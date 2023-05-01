@@ -1,11 +1,13 @@
 import React from 'react';
-import {useRouter} from "next/router";
-import {useQuery} from "react-query";
+import { useRouter } from "next/router";
+import { useQuery } from "react-query";
 import MealsService from "@/services/meals.service";
-import {Box, CircularProgress, Typography} from "@mui/material";
+import { Box } from "@mui/material";
 import MealCard from "@/components/common/meal-card";
 import * as styles from './MealPage.styles'
 import Video from "@/components/common/video";
+import Loader from "@/components/common/loader";
+import Error from "@/components/common/loader";
 
 const MealPage = () => {
   const router = useRouter();
@@ -17,19 +19,15 @@ const MealPage = () => {
     { refetchOnWindowFocus: false },
   )
 
-  const meal = data?.meals[0] as object;
+  const meal = data?.meals[0];
 
 
-  if (isLoading) return (
-    <Box sx={styles.pageWrapper}>
-      <CircularProgress />
-    </Box>
+  if (isLoading || !meal) return (
+    <Loader />
   );
 
-  if (isError) return (
-    <Box sx={styles.pageWrapper}>
-      <Typography variant="h4">ERROR</Typography>
-    </Box>
+  if (isError || !meal) return (
+    <Error />
   );
 
   return (
