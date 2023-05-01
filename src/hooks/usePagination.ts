@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const usePagination = (data, itemsPerPage) => {
+const usePagination = (data:[], itemsPerPage: number) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
 
@@ -27,7 +27,7 @@ const usePagination = (data, itemsPerPage) => {
     }
   };
 
-  const jumpToPage = (pageNumber) => {
+  const jumpToPage = (pageNumber: number) => {
     setCurrentPage(pageNumber);
   };
 
