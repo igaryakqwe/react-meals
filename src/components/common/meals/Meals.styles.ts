@@ -1,5 +1,5 @@
-import {SxProps} from "@mui/system";
-import {StyledComponentProps, Theme} from "@mui/material";
+import { SxProps } from "@mui/system";
+import { Theme } from "@mui/material";
 
 const pageWrapper: SxProps<Theme> = {
   maxWidth: '1240px',
@@ -25,7 +25,6 @@ const mealCard: SxProps<Theme> = {
   transition: '0.5s',
   '&:hover': {
     boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
-    scale: '1.01'
   }
 }
 
@@ -46,7 +45,7 @@ const mealCardText: SxProps<Theme> = {
   wordBreak: 'break-all',
   fontFamily: 'Calibri',
   maxWidth: "280px",
-  height: '100%'
+  height: '100%',
 }
 
 

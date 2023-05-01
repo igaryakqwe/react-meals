@@ -2,7 +2,7 @@ import { SxProps } from "@mui/system";
 import { Theme } from "@mui/material";
 
 const mealCardWrapper: SxProps<Theme> = {
-  maxWidth: '1340px',
+  maxWidth: '1340 px',
   height: '100%',
   display: 'flex',
   flexDirection: 'column',
@@ -11,12 +11,12 @@ const mealCardWrapper: SxProps<Theme> = {
   flexWrap: 'wrap',
   gap: '40px',
   boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px',
-  padding: '80px 0 80px 0',
+  padding: '20px 0 80px 0',
   borderRadius: '3%'
 }
 
 const mealCardMain: SxProps<Theme> = {
-  maxWidth: '1340px',
+  maxWidth: '1440px',
   height: '100%',
   display: 'flex',
   flexDirection: 'row',
@@ -56,7 +56,8 @@ const mealCardText: SxProps<Theme> = {
   instructions: {
     wordBreak: 'break-word',
     maxWidth: '1040px',
-    margin: '40px',
+    minWidth: '340px',
+    margin: '0 80px 0 80px',
   },
   fontFamily: 'Calibri',
 }
@@ -64,6 +65,6 @@ const mealCardText: SxProps<Theme> = {
 const listText = {
   fontFamily: 'Calibri',
   fontWeight: 500,
-  fontSize: '1.6 rem',
+  fontSize: '26px',
 }
 export { mealCardMain, mealCardWrapper, mealCardList, mealCardImage, mealCardText, listText };

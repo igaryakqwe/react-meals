@@ -1,11 +1,12 @@
-import {useQuery} from "react-query";
+import { useQuery } from "react-query";
 import MealsService from "@/services/meals.service";
 import {
   Box,
-  CircularProgress, Pagination,
+  CircularProgress,
+  Pagination,
   Typography
 } from "@mui/material";
-import React, {useState} from "react";
+import React from "react";
 import * as styles from './Meals.styles';
 import usePagination from "@/hooks/usePagination";
 

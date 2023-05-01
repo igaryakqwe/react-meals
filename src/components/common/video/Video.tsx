@@ -1,11 +1,8 @@
 import React from 'react';
 import Hls from 'hls.js';
 
-interface VideoProps {
-  source: string;
-}
-
-const Video: React.FC<VideoProps> = ({ source }) => {
+const Video = () => {
+  const source = `https://www.youtube.com/watch?v=CAbIoNTkqgo&ab_channel=What%27sForTea%3F`
   const hls = new Hls();
   const videoEl = React.useRef<HTMLVideoElement>(null);
   React.useEffect(() => {

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import Meals from "@/pages/components/common/meals";
+import Meals from "@/components/common/meals";
 import { Box } from "@mui/material";
 import * as styles from './MainPage.styles';
 

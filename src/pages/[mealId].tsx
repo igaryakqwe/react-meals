@@ -1,5 +1,5 @@
 import React from 'react';
-import MealPage from "@/pages/components/pages/meal-page/MealPage";
+import MealPage from "@/components/pages/meal-page/MealPage";
 
 const Meal = () => {
   return <MealPage />

@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
 import * as styles from './MealCard.styles';
+import Video from "@/components/common/video";
 
 const MealCard = ({meal}) => {
 

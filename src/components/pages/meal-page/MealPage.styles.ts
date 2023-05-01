@@ -9,4 +9,4 @@ const pageWrapper: SxProps<Theme> = {
   alignItems: 'center'
 }
 
-export {pageWrapper}
+export { pageWrapper }

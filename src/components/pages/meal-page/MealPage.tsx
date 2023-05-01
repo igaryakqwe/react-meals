@@ -3,9 +3,9 @@ import {useRouter} from "next/router";
 import {useQuery} from "react-query";
 import MealsService from "@/services/meals.service";
 import {Box, CircularProgress, Typography} from "@mui/material";
-import MealCard from "@/pages/components/common/meal-card";
+import MealCard from "@/components/common/meal-card";
 import * as styles from './MealPage.styles'
-import Video from "@/pages/components/common/video";
+import Video from "@/components/common/video";
 
 const MealPage = () => {
   const router = useRouter();
@@ -35,7 +35,7 @@ const MealPage = () => {
   return (
     <Box sx={styles.pageWrapper}>
       <MealCard meal={meal}/>
-      <Video source={meal.strYoutube}/>
+      <Video />
     </Box>
   );
 };
