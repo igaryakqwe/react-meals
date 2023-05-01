@@ -18,7 +18,10 @@ const header: SxProps<Theme> = {
 const link = {
   color: "black",
   textDecoration: 'none',
-  cursor: 'pointer'
+  cursor: 'pointer',
+  '&:hover': {
+    scale: '1.01'
+  }
 }
 
 export { icon, header, link }

@@ -2,12 +2,13 @@ import { SxProps } from "@mui/system";
 import { Theme } from "@mui/material";
 
 const mealCardWrapper: SxProps<Theme> = {
-  width: '1340px',
+  maxWidth: '1340px',
   height: '100%',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: "center",
   alignItems: "center",
+  flexWrap: 'wrap',
   gap: '40px',
   boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px',
   padding: '80px 0 80px 0',
@@ -15,19 +16,29 @@ const mealCardWrapper: SxProps<Theme> = {
 }
 
 const mealCardMain: SxProps<Theme> = {
-  width: '1140px',
+  maxWidth: '1340px',
   height: '100%',
   display: 'flex',
   flexDirection: 'row',
+  flexWrap: 'wrap',
   justifyContent: "center",
   alignItems: "center",
-  gap: '40px'
+  gap: '40px',
+  margin: '0 80px 0 80px',
+  padding: '80px 0 80px 0',
 }
 
 const mealCardList: SxProps<Theme> = {
   display: 'grid',
   gridTemplateColumns: 'repeat(3, 1fr)',
   gridGap: '20px',
+  margin: '0 40px 0 40px',
+  '@media(max-width: 670px)': {
+    gridTemplateColumns: 'repeat(2, 1fr)',
+  },
+  '@media(max-width: 430px)': {
+    gridTemplateColumns: 'repeat(1, 1fr)',
+  }
 }
 
 const mealCardImage = {
@@ -44,7 +55,8 @@ const mealCardText: SxProps<Theme> = {
   },
   instructions: {
     wordBreak: 'break-word',
-    width: '1040px',
+    maxWidth: '1040px',
+    margin: '40px',
   },
   fontFamily: 'Calibri',
 }
@@ -52,6 +64,6 @@ const mealCardText: SxProps<Theme> = {
 const listText = {
   fontFamily: 'Calibri',
   fontWeight: 500,
-  fontSize: '25px',
+  fontSize: '1.6 rem',
 }
 export { mealCardMain, mealCardWrapper, mealCardList, mealCardImage, mealCardText, listText };

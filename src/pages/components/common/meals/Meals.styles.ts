@@ -2,7 +2,7 @@ import {SxProps} from "@mui/system";
 import {StyledComponentProps, Theme} from "@mui/material";
 
 const pageWrapper: SxProps<Theme> = {
-  width: '1240px',
+  maxWidth: '1240px',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
@@ -11,7 +11,7 @@ const pageWrapper: SxProps<Theme> = {
 }
 
 const mealCard: SxProps<Theme> = {
-  width: '300px',
+  minWidth: '300px',
   height: '100%',
   display: 'flex',
   flexDirection: 'column',
@@ -24,7 +24,8 @@ const mealCard: SxProps<Theme> = {
   boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px',
   transition: '0.5s',
   '&:hover': {
-    boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px'
+    boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
+    scale: '1.01'
   }
 }
 
@@ -33,6 +34,7 @@ const mealCardBlock: SxProps<Theme> = {
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
+  flexWrap: 'wrap',
   margin: '15px 0 15px 0',
   width: '280px',
 }
