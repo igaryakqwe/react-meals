@@ -10,6 +10,7 @@ import Loader from "@/components/common/loader";
 import Error from "@/components/common/loader";
 
 const MealPage = () => {
+
   const router = useRouter();
   const mealId = router.query.mealId as string;
 
@@ -20,7 +21,6 @@ const MealPage = () => {
   )
 
   const meal = data?.meals[0];
-
 
   if (isLoading || !meal) return (
     <Loader />
@@ -33,7 +33,6 @@ const MealPage = () => {
   return (
     <Box sx={styles.pageWrapper}>
       <MealCard meal={meal}/>
-      <Video />
     </Box>
   );
 };

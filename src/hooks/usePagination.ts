@@ -30,8 +30,8 @@ const usePagination = (data: GetPaginatedMealsDTO, itemsPerPage: number) => {
 
   const jumpToPage = (pageNumber: number) => {
     setCurrentPage(pageNumber);
+    window.scrollTo(0, 0);
   };
-
   return { paginatedData, nextPage, prevPage, jumpToPage, currentPage, totalPages };
 };
 

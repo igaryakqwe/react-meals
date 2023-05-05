@@ -1,8 +1,9 @@
 import React from 'react';
 import Hls from 'hls.js';
+import {inspect} from "util";
+import * as styles from './Video.styles'
 
-const Video = () => {
-  const source = `https://www.youtube.com/watch?v=CAbIoNTkqgo&ab_channel=What%27sForTea%3F`
+const Video = ({source}) => {
   const hls = new Hls();
   const videoEl = React.useRef<HTMLVideoElement>(null);
   React.useEffect(() => {
@@ -15,13 +16,12 @@ const Video = () => {
   }, [hls, source]);
 
   return (
-    <div>
-      <video
-        ref={videoEl}
-        autoPlay={true}
-        muted={true}
-      />
-    </div>
+    <video
+      style={styles.video}
+      ref={videoEl}
+      autoPlay={true}
+      muted={true}
+    />
   );
 };
 

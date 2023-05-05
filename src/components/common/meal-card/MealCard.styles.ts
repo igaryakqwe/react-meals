@@ -1,23 +1,20 @@
 import { SxProps } from "@mui/system";
 import { Theme } from "@mui/material";
 
-const mealCardWrapper: SxProps<Theme> = {
-  maxWidth: '1340 px',
-  height: '100%',
+const wrapper: SxProps<Theme> = {
+  maxWidth: '1340px',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: "center",
   alignItems: "center",
-  flexWrap: 'wrap',
   gap: '40px',
   boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px',
   padding: '20px 0 80px 0',
-  borderRadius: '3%'
+  borderRadius: '3%',
 }
 
-const mealCardMain: SxProps<Theme> = {
-  maxWidth: '1440px',
-  height: '100%',
+const main: SxProps<Theme> = {
+  maxWidth: '1140px',
   display: 'flex',
   flexDirection: 'row',
   flexWrap: 'wrap',
@@ -28,7 +25,7 @@ const mealCardMain: SxProps<Theme> = {
   padding: '80px 0 60px 0',
 }
 
-const mealCardList: SxProps<Theme> = {
+const list: SxProps<Theme> = {
   display: 'grid',
   gridTemplateColumns: 'repeat(3, 1fr)',
   gridGap: '20px',
@@ -41,7 +38,7 @@ const mealCardList: SxProps<Theme> = {
   }
 }
 
-const mealCardImage = {
+const image = {
   width: '250px',
   height: '100%',
   borderRadius: '50% 0 0 50%',
@@ -49,8 +46,8 @@ const mealCardImage = {
 }
 
 
-const mealCardText: SxProps<Theme> = {
-  header: {
+const text: SxProps<Theme> = {
+  'h5': {
     fontWeight: 600
   },
   instructions: {
@@ -60,6 +57,7 @@ const mealCardText: SxProps<Theme> = {
     margin: '0 80px 0 80px',
   },
   fontFamily: 'Calibri',
+  textAlign: 'center'
 }
 
 const listText = {
@@ -67,4 +65,4 @@ const listText = {
   fontWeight: 500,
   fontSize: '26px',
 }
-export { mealCardMain, mealCardWrapper, mealCardList, mealCardImage, mealCardText, listText };
+export { main, wrapper, list, image, text, listText };

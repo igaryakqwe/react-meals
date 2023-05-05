@@ -1,39 +1,32 @@
 import { Box, Typography } from "@mui/material";
-import React from "react";
+import React, { FC } from "react";
 import * as styles from './MealCard.styles';
 import Video from "@/components/common/video";
+import { getIngredients, capitalize } from "@/utils/ingredientsUtil";
 
-const MealCard = ({meal}) => {
-
-  const ingredients = Object
-    .values(meal)
-    .slice(9,29)
-    .filter(Boolean);
-
-  const capitalize = (str: string) => {
-    if (str) {
-      return str[0].toUpperCase() + str.slice(1);
-    }
-  }
+const MealCard: FC = ({meal}) => {
+  const videoURL = 'https://cdn.jwplayer.com/manifests/pZxWPRg4.m3u8'
+  const ingredients = getIngredients(meal);
 
   return (
-    <Box sx={styles.mealCardWrapper}>
-      <Box sx={styles.mealCardMain}>
-        <img style={styles.mealCardImage} src={meal.strMealThumb} alt=""/>
+    <Box sx={styles.wrapper}>
+      <Box sx={styles.main}>
+        <img style={styles.image} src={meal.strMealThumb} alt=""/>
         <Box>
-          <Typography sx={styles.mealCardText?.header} variant="h2">{meal.strMeal}</Typography>
-          <Typography sx={styles.mealCardText} variant="h3">Category: {meal.strCategory}</Typography>
-          <Typography sx={styles.mealCardText} variant="h3">Tags: {meal.strTags}</Typography>
+          <Typography sx={styles.text?.h5} variant="h2">{meal.strMeal}</Typography>
+          <Typography sx={styles.text} variant="h3">Category: {meal.strCategory}</Typography>
+          <Typography sx={styles.text} variant="h3">Tags: {meal.strTags}</Typography>
         </Box>
       </Box>
-      <Typography sx={styles.mealCardText?.header} variant='h4'>Ingredients:</Typography>
-      <Box sx={styles.mealCardList}>
+      <Typography sx={styles.text?.h5} variant='h4'>Ingredients:</Typography>
+      <Box sx={styles.list}>
         {ingredients.map((ingredient: any) => (
           <li style={styles.listText} key={meal.idMeal}>{capitalize(ingredient)}</li>
         ))}
       </Box>
-      <Typography sx={styles.mealCardText?.header} variant='h4'>Instructions</Typography>
-      <Typography sx={styles.mealCardText?.instructions} variant="h6">{meal.strInstructions}</Typography>
+      <Typography sx={styles.text?.h5} variant='h4'>Instructions</Typography>
+      <Typography sx={styles.text?.instructions} variant="h6">{meal.strInstructions}</Typography>
+      <Video source={videoURL} />
     </Box>
   );
 };

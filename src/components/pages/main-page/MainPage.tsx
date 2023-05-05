@@ -23,7 +23,7 @@ const MainPage = () => {
   const { paginatedData, jumpToPage, currentPage, totalPages } =
     usePagination(data?.meals, itemsPerPage);
 
-  const handlePageChange = (event: any, page: number) => jumpToPage(page)
+  const handlePageChange = (event: any, page: number) => jumpToPage(page);
 
   if (isLoading) return (
     <Loader />
